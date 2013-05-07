@@ -36,6 +36,8 @@
 @synthesize containerViewProperties;
 @synthesize context;
 @synthesize passthroughViews;
+@synthesize anchor;
+@synthesize presentedFromView;
 
 - (id)init {
 	if ((self = [super init])) {
@@ -130,7 +132,9 @@
 						inView:(UIView *)theView 
 	  permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections 
 					  animated:(BOOL)animated {
-	
+
+    anchor = rect;
+    presentedFromView = theView;
 	
 	[self dismissPopoverAnimated:NO];
 	

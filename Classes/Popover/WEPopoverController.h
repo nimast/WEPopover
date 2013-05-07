@@ -28,7 +28,9 @@
 	UIView *view;
     UIView *parentView;
 	WETouchableView *backgroundView;
-	
+    UIView *presentedFromView;
+    CGRect anchor;
+
 	BOOL popoverVisible;
 	UIPopoverArrowDirection popoverArrowDirection;
 	id <WEPopoverControllerDelegate> delegate;
@@ -39,6 +41,9 @@
 }
 
 @property(nonatomic, retain) UIViewController *contentViewController;
+
+@property (nonatomic, readonly) CGRect anchor;
+@property (nonatomic, weak, readonly) UIView *presentedFromView;
 
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic, readonly, getter=isPopoverVisible) BOOL popoverVisible;
